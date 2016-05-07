@@ -391,3 +391,15 @@ func validateIPv6(value:AnyObject) -> ValidationResult {
     
     return .Valid
 }
+
+func validateURI(value:AnyObject) -> ValidationResult {
+    if let urlString = value as? String {
+        if let url = NSURL(string: urlString) {
+            return .Valid
+        } else {
+            return .Invalid(["'\(value)' is not a valid URI."])
+        }
+    } else {
+        return .Invalid(["'\(value)' is not a valid URI."])
+    }
+}
