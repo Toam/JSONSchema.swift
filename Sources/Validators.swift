@@ -429,9 +429,9 @@ func validateURI(value:AnyObject) -> ValidationResult {
     if let url = NSURL(string: urlString) {
       return .Valid
     } else {
-      return .Invalid(["'\(value)' is not a valid URI."])
+      return .invalid(["'\(value)' is not a valid URI."])
    }
   } else {
-    return .Invalid(["'\(value)' is not a valid URI."])
+    return .invalid(["'\(value)' is not a valid URI."])
   }
 }
