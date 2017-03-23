@@ -424,7 +424,7 @@ func validateIPv6(_ value:Any) -> ValidationResult {
   return .Valid
 }
 
-func validateURI(value:AnyObject) -> ValidationResult {
+func validateURI(_ value:Any) -> ValidationResult {
   if let urlString = value as? String {
     if let url = NSURL(string: urlString) {
       return .Valid
